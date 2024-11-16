@@ -3,14 +3,14 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 
-// Ініціалізація SimpleLightbox
+
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
   captionPosition: 'bottom'
 });
 
-// Функція для відображення галереї
+
 export function renderGallery(images) {
   const gallery = document.querySelector('.gallery');
   const markup = images.map(image => `
@@ -28,11 +28,11 @@ export function renderGallery(images) {
   `).join('');
   gallery.innerHTML = markup;
 
-  // Оновлення SimpleLightbox після додавання нових елементів
+  
   lightbox.refresh();
 }
 
-// Функція для очищення галереї
+
 export function clearGallery() {
   const gallery = document.querySelector('.gallery');
   gallery.innerHTML = '';
